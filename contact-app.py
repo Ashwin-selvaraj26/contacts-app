@@ -3,8 +3,8 @@ import json
 contacts = {}
 
 def add_contacts():
-    contact_name = input("Enter contact name: ")
-    contact_number = input("Enter contact number: ")
+    contact_name = input("Enter contact name: ").strip()
+    contact_number = input("Enter contact number: ").strip()
     contacts[contact_name] = contact_number
 
 
@@ -32,7 +32,7 @@ def view_contacts():
 
 
 def delete_contacts():
-    search_name = input("What is the name of the contact you looking for? : ").lower()
+    search_name = input("What is the name of the contact you looking for? : ").strip().lower()
     found = False
     del_name = ""
     for con_name in contacts:
@@ -47,7 +47,7 @@ def delete_contacts():
 
 
 def search_contacts():
-    search_name = input("What is the name of the contact you looking for? : ").lower()
+    search_name = input("What is the name of the contact you looking for? : ").strip().lower()
     found = False
     for con_name in contacts:
         if con_name.lower() == search_name:
@@ -86,7 +86,7 @@ restore_contacts()
 print("Type 'h' to view commands")
 
 while True:
-    user_inp = input("What do you want to do? (a,v,d,s,q): ")
+    user_inp = input("What do you want to do? (a,v,d,s,q): ").strip()
     if user_inp == "h":
         show_help()
     elif user_inp == "a":
